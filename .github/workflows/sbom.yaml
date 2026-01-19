@@ -2,9 +2,9 @@ name: Generate SBOM
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
   schedule:
     - cron: '31 9 * * 6'
   workflow_dispatch:
