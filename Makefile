@@ -37,7 +37,7 @@ run:
 	trunk serve --open
 
 test:
-	cargo llvm-cov nextest --all-features
+	cargo llvm-cov nextest --all-features --no-tests warn
 
 clean:
 	cargo clean

@@ -74,12 +74,12 @@ external-default-features = "allow"
 deny = [
     # Add crates that should not be used here
     # Example: { crate = "ansi_term@0.11.0", reason = "you can specify a reason it is banned" },
+    { crate = "paste@1.0.15", reason = "Some dependencies require this specific version" },
 ]
 # Certain crates/versions that will be skipped when doing duplicate detection
 skip = [
     # Add crates to skip during duplicate detection here if needed
     # Example: { crate = "ansi_term@0.11.0", reason = "you can specify a reason why it can't be updated/removed" },
-    { crate = "paste@1.0.15", reason = "Some dependencies require this specific version" },
 ]
 # Skip entire dependency trees during duplicate detection
 skip-tree = [
