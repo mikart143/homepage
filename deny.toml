@@ -45,6 +45,8 @@ allow = [
     "0BSD",
     "Zlib",
     "MPL-2.0",
+    "CC0-1.0",
+    "BSL-1.0"
 ]
 # Set confidence threshold for license detection
 # The higher the value, the more closely the license text must match
@@ -77,6 +79,7 @@ deny = [
 skip = [
     # Add crates to skip during duplicate detection here if needed
     # Example: { crate = "ansi_term@0.11.0", reason = "you can specify a reason why it can't be updated/removed" },
+    { crate = "paste@1.0.15", reason = "Some dependencies require this specific version" },
 ]
 # Skip entire dependency trees during duplicate detection
 skip-tree = [
