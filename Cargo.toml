@@ -1,0 +1,12 @@
+[package]
+name = "homepage"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+authors = ["Michał Kruczek <mikart143@gmail.com>"]
+description = "My personal homepage"
+
+[dependencies]
+leptos = { version = "0.8.15", features = ["csr"] }
+console_error_panic_hook = { version = "0.1.7" }
+leptos_meta = "0.8.5"

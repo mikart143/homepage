@@ -1,0 +1,40 @@
+name: Generate SBOM
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  schedule:
+    - cron: '31 9 * * 6'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  code-sbom:
+    name: Codebase SBOM
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      security-events: write
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v6
+
+      - name: Run Trivy in GitHub SBOM mode and submit results to Dependency Graph
+        uses: aquasecurity/trivy-action@0.33.1
+        with:
+          scan-type: 'fs'
+          format: 'github'
+          output: 'code.sbom.json'
+          scan-ref: '.'
+          github-pat: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Upload trivy report as a Github artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: trivy-sbom-report
+          path: '${{ github.workspace }}/code.sbom.json'

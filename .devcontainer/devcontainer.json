@@ -1,0 +1,85 @@
+{
+  "name": "Homepage",
+  "image": "almalinux:9",
+
+  "features": {
+    // Git
+    "ghcr.io/devcontainers/features/git:1": {},
+    
+    // Non root user setup and update common packages
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "username": "vscode",
+      "installOhMyZsh": false,
+      "installOhMyZshConfig": false,
+      "upgradePackages": true
+    },
+
+    // Base Setup
+    "ghcr.io/devcontainers-extra/features/bash-command:1": {
+      "command": "dnf install -y curl --allowerasing && dnf install -y gcc gcc-c++ make pkgconf-pkg-config openssl-devel dnf-plugins-core unzip && dnf clean all && curl -fsSL https://bun.com/install | BUN_INSTALL=/usr/local bash"
+    },
+
+    // Rust toolchain with rustfmt and clippy
+    "ghcr.io/devcontainers/features/rust:1": {
+      "profile": "minimal",
+      "components": ""
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "pflannery.vscode-versionlens",
+        "tamasfe.even-better-toml",
+        "GitHub.copilot",
+        "redhat.vscode-yaml",
+        "vadimcn.vscode-lldb",
+        "DavidAnson.vscode-markdownlint",
+        "GitHub.vscode-github-actions",
+        "bradlc.vscode-tailwindcss"
+      ],
+      "settings": {
+        "rust-analyzer.check.command": "clippy",
+        "rust-analyzer.cargo.targetDir": "${workspaceFolder}/target",
+        "[rust]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "rust-lang.rust-analyzer"
+        },
+        "emmet.includeLanguages": {
+          "rust": "html",
+          "*.rs": "html"
+        },
+        "tailwindCSS.includeLanguages": {
+            "rust": "html",
+            "*.rs": "html"
+        },
+        "files.associations": {
+            "*.rs": "rust"
+        },
+        "editor.quickSuggestions": {
+          "other": "on",
+          "comments": "on",
+          "strings": true
+        },
+        "css.validate": false
+      }
+    }
+  },
+
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": {
+      "label": "Trunk Server",
+      "onAutoForward": "notify"
+    }
+  },
+
+  "mounts": [
+    "source=${localEnv:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached"
+  ],
+
+  "postStartCommand": "make setup",
+
+  "remoteUser": "vscode"
+}

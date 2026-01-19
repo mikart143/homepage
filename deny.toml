@@ -1,0 +1,97 @@
+# This configuration file defines checks performed by cargo-deny
+# See: https://embarkstudios.github.io/cargo-deny/
+
+# Note that all fields that take a lint level have these possible values:
+# * deny - An error will be produced and the check will fail
+# * warn - A warning will be produced, but the check will not fail
+# * allow - No warning or error will be produced
+
+# The graph table configures how the dependency graph is constructed
+[graph]
+# Use all features when checking the dependency graph
+all-features = false
+# Do not use default features
+no-default-features = false
+
+# Advisories check configuration
+# Checks for security vulnerabilities reported in the RustSec Advisory Database
+# More documentation: https://embarkstudios.github.io/cargo-deny/checks/advisories/cfg.html
+[advisories]
+# The path where the advisory databases are cloned/fetched into
+# db-path = "$CARGO_HOME/advisory-dbs"
+# The url(s) of the advisory databases to use
+# db-urls = ["https://github.com/rustsec/advisory-db"]
+# A list of advisory IDs to ignore
+ignore = [
+    # Add specific advisory IDs to ignore here if needed
+    # Example: "RUSTSEC-0000-0000",
+]
+
+# Licenses check configuration
+# Ensures all dependencies use acceptable licenses
+# More documentation: https://embarkstudios.github.io/cargo-deny/checks/licenses/cfg.html
+[licenses]
+# List of allowed licenses
+# Common open-source licenses used in the Rust ecosystem
+# See https://spdx.org/licenses/ for list of possible licenses
+allow = [
+    "MIT",
+    "Apache-2.0",
+    "Apache-2.0 WITH LLVM-exception",
+    "BSD-3-Clause",
+    "ISC",
+    "Unicode-3.0",
+    "Unlicense",
+    "0BSD",
+    "Zlib",
+    "MPL-2.0",
+]
+# Set confidence threshold for license detection
+# The higher the value, the more closely the license text must match
+confidence-threshold = 0.8
+# Exceptions for specific crates (if needed)
+exceptions = [
+    # Example: { allow = ["Zlib"], crate = "adler32" },
+]
+
+# Bans check configuration
+# Checks for specific crates that should not be used
+# More documentation: https://embarkstudios.github.io/cargo-deny/checks/bans/cfg.html
+[bans]
+# Lint level for when multiple versions of the same crate are detected
+multiple-versions = "warn"
+# Lint level for when a crate version requirement is `*`
+wildcards = "deny"
+# The graph highlighting used when creating dotgraphs for crates with multiple versions
+highlight = "all"
+# The default lint level for `default` features for workspace crates
+workspace-default-features = "allow"
+# The default lint level for `default` features for external crates
+external-default-features = "allow"
+# List of crates to deny
+deny = [
+    # Add crates that should not be used here
+    # Example: { crate = "ansi_term@0.11.0", reason = "you can specify a reason it is banned" },
+]
+# Certain crates/versions that will be skipped when doing duplicate detection
+skip = [
+    # Add crates to skip during duplicate detection here if needed
+    # Example: { crate = "ansi_term@0.11.0", reason = "you can specify a reason why it can't be updated/removed" },
+]
+# Skip entire dependency trees during duplicate detection
+skip-tree = [
+    # Example: "ansi_term@0.11.0",
+]
+
+# Sources check configuration
+# Ensures dependencies come from trusted sources
+# More documentation: https://embarkstudios.github.io/cargo-deny/checks/sources/cfg.html
+[sources]
+# Lint level for what to happen when a crate from a registry not in the allow list is encountered
+unknown-registry = "deny"
+# Lint level for what to happen when a crate from a git repository not in the allow list is encountered
+unknown-git = "deny"
+# List of URLs for allowed crate registries
+allow-registry = ["https://github.com/rust-lang/crates.io-index"]
+# List of URLs for allowed Git repositories
+allow-git = []

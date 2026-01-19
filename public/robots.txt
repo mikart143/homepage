@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+
+Sitemap: https://kruczek.dev/sitemap.xml
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
