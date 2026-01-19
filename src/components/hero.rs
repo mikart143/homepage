@@ -1,5 +1,5 @@
-use leptos::prelude::*;
 use super::common::GlassSection;
+use leptos::prelude::*;
 
 #[component]
 pub fn Hero() -> impl IntoView {
