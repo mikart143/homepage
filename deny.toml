@@ -25,6 +25,7 @@ no-default-features = false
 ignore = [
     # Add specific advisory IDs to ignore here if needed
     # Example: "RUSTSEC-0000-0000",
+    "RUSTSEC-2024-0436", # paste crate is unmaintained but used transitively by leptos
 ]
 
 # Licenses check configuration
@@ -74,7 +75,6 @@ external-default-features = "allow"
 deny = [
     # Add crates that should not be used here
     # Example: { crate = "ansi_term@0.11.0", reason = "you can specify a reason it is banned" },
-    { crate = "paste@1.0.15", reason = "Some dependencies require this specific version" },
 ]
 # Certain crates/versions that will be skipped when doing duplicate detection
 skip = [
