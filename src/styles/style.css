@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 @keyframes animation-gradient-1 {
     0% {
         transform: translateY(-50%) translateX(-50%) rotate(-20deg) translateX(20%);

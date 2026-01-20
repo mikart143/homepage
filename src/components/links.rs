@@ -4,9 +4,9 @@ use leptos::prelude::*;
 #[component]
 pub fn ImportantLinks() -> impl IntoView {
     view! {
-        <section id="links" class="w-full max-w-6xl">
+        <section id="links" class="w-full max-w-6xl" aria-label="Important Resources">
             <GlassSection class="p-10">
-                <h2 class="text-white text-4xl font-bold mb-8 text-center">
+                <h2 class="text-white text-4xl font-bold mb-8 text-center focus:outline-2 focus:outline-white focus:rounded">
                     "Important Resources"
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -52,12 +52,19 @@ pub fn LinkCard(
     icon_src: &'static str,
     icon_alt: &'static str,
 ) -> impl IntoView {
+    let external_indicator = if url != "#" {
+        " (opens in new window)"
+    } else {
+        ""
+    };
+
     view! {
         <a
             href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="backdrop-blur-lg bg-white/5 border border-white/20 rounded-xl p-6 hover:bg-white/10 hover:scale-105 transition-all duration-300 group"
+            target={if url != "#" { "_blank" } else { "_self" }}
+            rel=if url != "#" { "noopener noreferrer" } else { "" }
+            class="backdrop-blur-lg bg-white/5 border border-white/20 rounded-xl p-6 hover:bg-white/10 hover:scale-105 focus:outline-2 focus:outline-offset-2 focus:outline-white transition-all duration-300 group"
+            aria-label={format!("{}{}", title, external_indicator)}
         >
             <div class="mb-3 h-12 w-12 rounded-lg border border-white/15 bg-white/5 flex items-center justify-center">
                 <img src={icon_src} alt={icon_alt} class="h-8 w-8" loading="lazy" />

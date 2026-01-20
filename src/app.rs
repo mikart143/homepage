@@ -1,6 +1,6 @@
 use crate::components::*;
 use leptos::prelude::*;
-use leptos_meta::{Html, Meta, Script, Title, provide_meta_context};
+use leptos_meta::{Body, Html, Meta, Script, Style, Title, provide_meta_context};
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -14,6 +14,7 @@ pub fn App() -> impl IntoView {
         <Meta name="description" content="Full-stack developer specializing in .NET, AI/ML, and cloud infrastructure. Offering web development, AI solutions, and DevOps consulting." />
         <Meta name="keywords" content=".NET, C#, AI, Machine Learning, Azure, Kubernetes, Web Development, Full-Stack" />
         <Meta name="author" content="Michał Kruczek" />
+        <Meta name="theme-color" content="#0f172a" />
         <Meta property="og:type" content="website" />
         <Meta property="og:title" content="Michał Kruczek - Full-Stack Developer & AI Specialist" />
         <Meta property="og:description" content="Expert in .NET full-stack development, AI/ML integration, and cloud infrastructure. Available for consulting and training." />
@@ -44,23 +45,40 @@ pub fn App() -> impl IntoView {
             }
         }"#}
         </Script>
+        // <!-- Prefers reduced motion for accessibility -->
+        <Style>
+            {r#"
+                @media (prefers-reduced-motion: reduce) {
+                        * {
+                        animation-duration: 0.01ms !important;
+                        animation-iteration-count: 1 !important;
+                        transition-duration: 0.01ms !important;
+                        scroll-behavior: auto !important;
+                        }
+                    }
+            "#}
+        </Style>
 
-        <div class="relative min-h-screen bg-gray-900">
-            <PlasmaBackground />
+        <Body {..} class="relative min-h-screen bg-gray-900 dark:bg-gray-950" />
 
-            <div class="relative z-10 flex flex-col items-center p-8 gap-16">
-                // Hero Section
-                <Hero />
+        <PlasmaBackground />
 
-                // Important Links Section
-                <ImportantLinks />
+        <a href="#main" class="sr-only focus:not-sr-only focus:p-4 focus:bg-blue-500 focus:text-white focus:absolute focus:top-0 focus:left-0">
+            "Skip to main content"
+        </a>
 
-                // Services Section
-                <Services />
+        <main id="main" class="relative z-10 flex flex-col items-center p-8 gap-16">
+            // Hero Section
+            <Hero />
 
-                // Contact Section
-                <Contact />
-            </div>
-        </div>
+            // Important Links Section
+            <ImportantLinks />
+
+            // Services Section
+            <Services />
+
+            // Contact Section
+            <Contact />
+        </main>
     }
 }
