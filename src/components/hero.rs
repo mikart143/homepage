@@ -8,8 +8,8 @@ pub fn Hero() -> impl IntoView {
             <GlassSection class="p-12">
                 <div class="mb-8 flex justify-center">
                     <img
-                        src="assets/profile.jpeg"
-                        alt="Profile Picture"
+                        src="assets/profile.webp"
+                        alt="Michał Kruczek - Full-Stack Developer"
                         class="w-64 h-64 rounded-full border-4 border-blue-400 shadow-xl object-cover"
                     />
                 </div>
