@@ -11,6 +11,7 @@ pub fn Hero() -> impl IntoView {
                         src="assets/profile.webp"
                         alt="Michał Kruczek - Full-Stack Developer"
                         class="w-64 h-64 rounded-full border-4 border-blue-400 shadow-xl object-cover"
+                        fetchpriority="high"
                     />
                 </div>
                 <h1 class="text-6xl md:text-7xl font-bold mb-6 bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent focus:outline-2 focus:outline-white focus:rounded">
