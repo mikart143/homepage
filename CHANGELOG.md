@@ -1,3 +1,17 @@
+# [1.1.0](https://github.com/mikart143/homepage/compare/v1.0.0...v1.1.0) (2026-01-21)
+
+
+### Bug Fixes
+
+* jpeg format to webp ([b549fa4](https://github.com/mikart143/homepage/commit/b549fa410743c06dc2f727fffc8882f14099c600))
+* README formatting ([5e824ed](https://github.com/mikart143/homepage/commit/5e824ed818964782f4e3ccd5f6bf1118f0c90c01))
+
+
+### Features
+
+* Added better wcag support ([713a2d2](https://github.com/mikart143/homepage/commit/713a2d24e076923709e587cbb6df0a2eb641bf06))
+* Remove gitHubToken from release workflow ([aaa9d11](https://github.com/mikart143/homepage/commit/aaa9d112cf0039a0c2c913f941a016b244bcb04a))
+
 # 1.0.0 (2026-01-19)
 
 
