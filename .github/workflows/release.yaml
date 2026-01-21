@@ -72,6 +72,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy dist --project-name=homepage ${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }}
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
 
