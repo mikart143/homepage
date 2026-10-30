@@ -30,9 +30,9 @@ Personal single-page portfolio for Michał Kruczek built with Leptos (CSR) and T
 
 ## Quickstart
 
-1) Install deps and tools: `make setup`
-2) Run dev server with live reload: `make run` (opens on a local port)
-3) Build optimized static bundle: `make build-release` (outputs to `dist/`)
+1. Install deps and tools: `make setup`
+2. Run dev server with live reload: `make run` (opens on a local port)
+3. Build optimized static bundle: `make build-release` (outputs to `dist/`)
 
 ### Direct Trunk commands
 

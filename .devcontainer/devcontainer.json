@@ -5,7 +5,7 @@
   "features": {
     // Git
     "ghcr.io/devcontainers/features/git:1": {},
-    
+
     // Non root user setup and update common packages
     "ghcr.io/devcontainers/features/common-utils:2": {
       "username": "vscode",
@@ -51,11 +51,11 @@
           "*.rs": "html"
         },
         "tailwindCSS.includeLanguages": {
-            "rust": "html",
-            "*.rs": "html"
+          "rust": "html",
+          "*.rs": "html"
         },
         "files.associations": {
-            "*.rs": "rust"
+          "*.rs": "rust"
         },
         "editor.quickSuggestions": {
           "other": "on",

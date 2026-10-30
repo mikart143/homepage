@@ -2,9 +2,9 @@ name: Generate SBOM
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
   schedule:
     - cron: '31 9 * * 6'
   workflow_dispatch:
@@ -32,7 +32,7 @@ jobs:
           output: 'code.sbom.json'
           scan-ref: '.'
           github-pat: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Upload trivy report as a Github artifact
         uses: actions/upload-artifact@v6
         with:
