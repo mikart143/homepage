@@ -1,0 +1,25 @@
+# Michał Kruczek
+
+> Personal homepage of Michał Kruczek, a full-stack developer and AI specialist working with .NET, AI/ML and cloud infrastructure. The site is a single page; the sections below summarize it.
+
+Michał builds modern, scalable web applications and offers consulting and training. Works at LUXMED (per the site's structured data).
+
+## Links
+
+- [Homepage](https://kruczek.dev/): Hero, services and contact form on a single page
+- [GitHub](https://github.com/mikart143): Open-source projects and contributions
+- [LinkedIn](https://www.linkedin.com/in/kruczek-michal98/): Professional profile
+- [Resume (PDF)](https://kruczek.dev/assets/Michal_Kruczek_Resume.pdf): Professional resume
+
+## Services
+
+- .NET Full-Stack Development: Enterprise applications using .NET Core, ASP.NET Core, and modern frontend frameworks (Angular/React/Vue.js, MSSQL)
+- AI & Machine Learning: AI software development, infrastructure setup, and AI-based system implementations (OpenAI integration, PyTorch & Pandas, FastAPI)
+- Cloud Infrastructure & DevOps: Scalable cloud solutions with Azure, Kubernetes, and microservices architecture
+- DevOps & Deployment: Automated CI/CD pipelines and production deployment strategies (Docker, Kubernetes, Azure DevOps & Git)
+- Consulting: Technical guidance, architecture planning, and team leadership
+- AI Training & Workshops: Training on GitHub Copilot, LLM integration, and AI tools for enterprise teams
+
+## Contact
+
+- [Contact form](https://kruczek.dev/#contact): Send a message about a project or collaboration
