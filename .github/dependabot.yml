@@ -10,17 +10,12 @@ updates:
     schedule:
       interval: 'daily'
 
-  - package-ecosystem: 'cargo'
+  - package-ecosystem: 'npm'
     directory: '/'
     schedule:
       interval: 'daily'
 
   - package-ecosystem: 'github-actions'
-    directory: '/'
-    schedule:
-      interval: 'daily'
-
-  - package-ecosystem: 'rust-toolchain'
     directory: '/'
     schedule:
       interval: 'daily'

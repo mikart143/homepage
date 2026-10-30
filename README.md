@@ -1,60 +1,54 @@
 # Homepage
 
-Personal single-page portfolio for Michał Kruczek built with Leptos (CSR) and Tailwind, bundled via Trunk and targeting WebAssembly.
+Personal single-page portfolio for Michał Kruczek ([kruczek.dev](https://kruczek.dev/)), built with SvelteKit (Svelte 5, TypeScript) and Tailwind CSS v4. It is prerendered to static HTML with `@sveltejs/adapter-static` and ships no client-side JavaScript (`csr = false`); the contact form is a plain HTML `POST`.
 
 ## Stack
 
-- Rust 2024, Leptos (CSR) with `leptos_meta` for SEO and structured data
-- Tailwind CSS (Trunk tailwind pipeline) plus a few custom animations
-- Trunk for WASM bundling and static asset pipeline, served from `index.html`
+- SvelteKit 3 + Svelte 5, TypeScript (strict)
+- `@sveltejs/adapter-static`, single prerendered page
+- Tailwind CSS v4 via `@tailwindcss/vite`, plus custom background animations
+- ESLint, Prettier, `svelte-check`
+- Hosted on Cloudflare Pages (project `homepage`)
 
 ## Project Layout
 
-- Core entry point: [src/main.rs](src/main.rs) → mounts [src/app.rs](src/app.rs)
-- UI composition and metadata: [src/app.rs](src/app.rs)
-- Reusable components: [src/components](src/components)
-  - Hero: [src/components/hero.rs](src/components/hero.rs)
-  - Links: [src/components/links.rs](src/components/links.rs)
-  - Services: [src/components/services.rs](src/components/services.rs)
-  - Contact form (SubmitForm backend): [src/components/contact.rs](src/components/contact.rs)
-  - Glass effects: [src/components/common.rs](src/components/common.rs)
-  - Animated background: [src/components/background.rs](src/components/background.rs)
-- Styles: Tailwind entry [src/styles/tailwind.css](src/styles/tailwind.css), custom animations [src/styles/style.css](src/styles/style.css)
-- Static assets copied via Trunk: [public](public)
+- Layout (global CSS, skip link, `<main>`): [src/routes/+layout.svelte](src/routes/+layout.svelte)
+- Page options (`prerender`, `csr`): [src/routes/+layout.ts](src/routes/+layout.ts)
+- Page, SEO meta and JSON-LD: [src/routes/+page.svelte](src/routes/+page.svelte)
+- Components: [src/lib/components](src/lib/components) (Hero, ImportantLinks, Services, Contact, GlassSection, PlasmaBackground)
+- Styles: [src/app.css](src/app.css) (Tailwind import, background animations, reduced-motion rule)
+- Static files (assets, icons, `robots.txt`, `sitemap.xml`): [static](static)
+- Build config (adapter, Tailwind plugin): [vite.config.ts](vite.config.ts) (SvelteKit 3 no longer reads `svelte.config.js`)
 
 ## Prerequisites
 
-- Rust toolchain (see [rust-toolchain.toml](rust-toolchain.toml))
-- WebAssembly target: `rustup target add wasm32-unknown-unknown`
-- Trunk and tooling: `cargo binstall -y trunk` (or `make install-tools` for full toolchain)
+- Node.js, see [.nvmrc](.nvmrc) (SvelteKit 3 needs >= 22.17)
 
 ## Quickstart
 
-1. Install deps and tools: `make setup`
-2. Run dev server with live reload: `make run` (opens on a local port)
-3. Build optimized static bundle: `make build-release` (outputs to `dist/`)
+1. Install dependencies: `npm ci`
+2. Dev server: `npm run dev`
+3. Production build to `build/`: `npm run build`
+4. Preview the build: `npm run preview`
 
-### Direct Trunk commands
+## Quality
 
-- Dev: `trunk serve --open`
-- Release build: `trunk build --release`
-
-## Testing and Quality
-
-- Tests with coverage: `make test` (uses `cargo llvm-cov` and `cargo nextest`)
-- Lint and format: `make lint` and `make format`
-- Security and license audit: `make audit` (cargo-deny)
+- Type check: `npm run check`
+- Lint: `npm run lint`
+- Format: `npm run format` (check only: `npm run format:check`)
+- Dependency audit: `npm audit --omit=dev`
 
 ## Deployment
 
-- `dist/` contains the static bundle; serve with any static host (e.g., Nginx, GitHub Pages, Netlify).
-- Ensure public assets (icons, resume, sitemap, robots) remain under [public](public) so Trunk copies them.
+Pushing to `main` runs [deploy.yaml](.github/workflows/deploy.yaml): `npm ci`, `npm run build`, then `wrangler pages deploy build --project-name=homepage`. It needs the `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` repository secrets. Run it manually with the `dry_run` input to pass `--dry-run`.
+
+There is no versioning or automated release; [CHANGELOG.md](CHANGELOG.md) is kept as history of the Rust/Leptos era only.
 
 ## Customization
 
-- Update SEO/meta and JSON-LD in [src/app.rs](src/app.rs).
-- Adjust palette/background animations in [src/styles/style.css](src/styles/style.css) and Tailwind utilities in [src/styles/tailwind.css](src/styles/tailwind.css).
-- Replace assets (profile image, resume) under [public/assets](public/assets).
+- Update SEO/meta and JSON-LD in [src/routes/+page.svelte](src/routes/+page.svelte).
+- Edit link and service content in the data arrays at the top of [ImportantLinks.svelte](src/lib/components/ImportantLinks.svelte) and [Services.svelte](src/lib/components/Services.svelte).
+- Replace assets (profile image, resume) under [static/assets](static/assets).
 
 ## License
 
