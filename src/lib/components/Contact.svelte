@@ -7,11 +7,11 @@
     <h2 class="mb-4 text-center text-4xl font-bold text-white focus:rounded focus:outline-2">
       Get in Touch
     </h2>
-    <p class="mb-10 text-center text-white/70">
+    <p class="mb-10 text-center text-white/85">
       Let's discuss your next project or collaboration opportunity
     </p>
 
-    <div class="rounded-xl border border-white/20 bg-white/5 p-8 backdrop-blur-lg">
+    <div class="rounded-xl border border-white/20 bg-gray-900/50 p-8 backdrop-blur-lg">
       <form
         action="https://submit-form.com/A9BYhfqrW"
         method="POST"
@@ -19,7 +19,7 @@
         aria-label="Contact form"
       >
         <div class="form-group">
-          <label for="name" class="mb-2 block text-sm font-medium text-white/70">
+          <label for="name" class="mb-2 block text-sm font-medium text-white/85">
             Name
             <span class="text-red-400" aria-label="required">*</span>
           </label>
@@ -30,11 +30,11 @@
             placeholder="Your name"
             required
             aria-required="true"
-            class="w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-white placeholder-white/40 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-blue-400"
+            class="w-full rounded-lg border border-white/20 bg-gray-900/50 px-4 py-3 text-white placeholder-white/40 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-blue-400"
           />
         </div>
         <div class="form-group">
-          <label for="email" class="mb-2 block text-sm font-medium text-white/70">
+          <label for="email" class="mb-2 block text-sm font-medium text-white/85">
             Email
             <span class="text-red-400" aria-label="required">*</span>
           </label>
@@ -45,11 +45,11 @@
             placeholder="your.email@example.com"
             required
             aria-required="true"
-            class="w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-white placeholder-white/40 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-blue-400"
+            class="w-full rounded-lg border border-white/20 bg-gray-900/50 px-4 py-3 text-white placeholder-white/40 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-blue-400"
           />
         </div>
         <div class="form-group">
-          <label for="message" class="mb-2 block text-sm font-medium text-white/70">
+          <label for="message" class="mb-2 block text-sm font-medium text-white/85">
             Message
             <span class="text-red-400" aria-label="required">*</span>
           </label>
@@ -60,7 +60,7 @@
             rows="5"
             required
             aria-required="true"
-            class="w-full resize-none rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-white placeholder-white/40 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-blue-400"
+            class="w-full resize-none rounded-lg border border-white/20 bg-gray-900/50 px-4 py-3 text-white placeholder-white/40 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-blue-400"
           ></textarea>
         </div>
         <button
