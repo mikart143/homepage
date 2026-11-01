@@ -31,14 +31,12 @@
       <a
         href="#services"
         class="rounded-lg bg-linear-to-r from-blue-500 to-purple-600 px-8 py-3 font-semibold text-white shadow-lg transition-transform hover:scale-105 focus:outline-2 focus:outline-offset-2 focus:outline-white"
-        aria-label="Jump to services section"
       >
         View Services
       </a>
       <a
         href="#contact"
         class="rounded-lg border border-white/30 bg-white/10 px-8 py-3 font-semibold text-white backdrop-blur-lg transition-transform hover:scale-105 focus:outline-2 focus:outline-offset-2 focus:outline-white"
-        aria-label="Jump to contact section"
       >
         Get in Touch
       </a>

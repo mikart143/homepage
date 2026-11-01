@@ -66,7 +66,6 @@
         <button
           type="submit"
           class="w-full rounded-lg bg-linear-to-r from-blue-500 to-purple-600 py-3 font-semibold text-white shadow-lg transition-transform hover:scale-[1.02] focus:outline-2 focus:outline-offset-2 focus:outline-blue-400"
-          aria-label="Send your message"
         >
           Send Message
         </button>
