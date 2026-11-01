@@ -64,14 +64,17 @@ html {
 
 .animate-gradient-1 {
   animation: animation-gradient-1 11s cubic-bezier(0.1, 0, 0.9, 1) infinite;
+  will-change: transform;
 }
 
 .animate-gradient-2 {
   animation: animation-gradient-2 11s cubic-bezier(0.1, 0, 0.9, 1) infinite;
+  will-change: transform;
 }
 
 .animate-gradient-3 {
   animation: animation-gradient-3 11s cubic-bezier(0.1, 0, 0.9, 1) infinite;
+  will-change: transform;
 }
 
 /* Prefers reduced motion for accessibility */
