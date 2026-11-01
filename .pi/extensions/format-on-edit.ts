@@ -19,7 +19,12 @@ const GIT_COMMIT_RE = /(?:^|[;&]\s*)git\s+commit\b/;
 
 function toolNameOf(event: unknown): string | undefined {
   const name = (event as { toolName?: unknown } | null | undefined)?.toolName;
-  return typeof name === 'string' ? name : undefined;
+  return typeof name === 'string' ? name.toLowerCase() : undefined;
+}
+
+function isTool(event: unknown, ...names: string[]): boolean {
+  const name = toolNameOf(event);
+  return name !== undefined && names.includes(name);
 }
 
 function inputOf(event: unknown): Record<string, unknown> | undefined {
@@ -54,8 +59,7 @@ export default function (pi: ExtensionAPI): void {
 
   // (A) Auto-format right after every file edit/write.
   pi.on('tool_result', async (event: unknown) => {
-    const toolName = toolNameOf(event);
-    if (toolName !== 'Edit' && toolName !== 'Write') return;
+    if (!isTool(event, 'edit', 'write')) return;
     const file = filePathOf(inputOf(event));
     if (!file || !PRETTIER_SCOPE.test(file)) return;
     try {
@@ -67,7 +71,7 @@ export default function (pi: ExtensionAPI): void {
 
   // (B) Format gate right before `git commit`: format staged files, then re-stage them.
   pi.on('tool_call', async (event: unknown) => {
-    if (toolNameOf(event) !== 'Bash') return;
+    if (!isTool(event, 'bash')) return;
     const command = commandOf(inputOf(event));
     if (!GIT_COMMIT_RE.test(command)) return;
     try {
