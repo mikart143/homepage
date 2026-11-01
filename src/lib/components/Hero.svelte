@@ -25,7 +25,7 @@
     <p class="mb-8 text-xl leading-relaxed text-white/90 md:text-2xl">
       Full-Stack Developer &amp; Creative Problem Solver
     </p>
-    <p class="mx-auto mb-10 max-w-2xl text-lg text-white/70">
+    <p class="mx-auto mb-10 max-w-2xl text-lg text-white/85">
       I build modern, scalable web applications with cutting-edge technologies. Passionate about
       creating elegant solutions to complex problems.
     </p>

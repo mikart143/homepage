@@ -52,24 +52,24 @@
     >
       Services I Provide
     </h2>
-    <p class="mx-auto mb-10 max-w-2xl text-center text-white/70">
+    <p class="mx-auto mb-10 max-w-2xl text-center text-white/85">
       Comprehensive solutions tailored to your needs
     </p>
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {#each services as { title, description, features } (title)}
         <article
-          class="rounded-xl border border-white/20 bg-white/5 p-6 backdrop-blur-lg transition-all duration-300 focus-within:rounded focus-within:outline-2 focus-within:outline-white hover:bg-white/10"
+          class="rounded-xl border border-white/20 bg-gray-900/50 p-6 backdrop-blur-lg transition-all duration-300 focus-within:rounded focus-within:outline-2 focus-within:outline-white hover:bg-white/10"
         >
           <h3
             class="mb-3 text-2xl font-semibold text-white focus:rounded focus:outline-2 focus:outline-white"
           >
             {title}
           </h3>
-          <p class="mb-4 text-sm leading-relaxed text-white/70">{description}</p>
+          <p class="mb-4 text-sm leading-relaxed text-white/85">{description}</p>
           <ul class="space-y-2" aria-label="Features of {title}">
             {#each features as feature (feature)}
               <li
-                class="flex items-center gap-2 text-sm text-white/60 focus:rounded focus:outline-2 focus:outline-white"
+                class="flex items-center gap-2 text-sm text-white/80 focus:rounded focus:outline-2 focus:outline-white"
               >
                 <span class="text-green-400" aria-hidden="true">✓</span>
                 {feature}

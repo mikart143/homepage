@@ -55,13 +55,13 @@
           href={url}
           target={external ? '_blank' : '_self'}
           rel={external ? 'noopener noreferrer' : undefined}
-          class="group rounded-xl border border-white/20 bg-white/5 p-6 backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:bg-white/10 focus:outline-2 focus:outline-offset-2 focus:outline-white"
+          class="group rounded-xl border border-white/20 bg-gray-900/50 p-6 backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:bg-white/10 focus:outline-2 focus:outline-offset-2 focus:outline-white"
           aria-label={external
             ? `${title}: ${description} (opens in new window)`
             : `${title}: ${description}`}
         >
           <div
-            class="mb-3 flex h-12 w-12 items-center justify-center rounded-lg border border-white/15 bg-white/5"
+            class="mb-3 flex h-12 w-12 items-center justify-center rounded-lg border border-white/15 bg-gray-900/50"
           >
             <img src={iconSrc} alt={iconAlt} class="h-8 w-8" loading="lazy" />
           </div>
@@ -70,7 +70,7 @@
           >
             {title}
           </h3>
-          <p class="text-sm text-white/60">{description}</p>
+          <p class="text-sm text-white/80">{description}</p>
         </a>
       {/each}
     </div>
