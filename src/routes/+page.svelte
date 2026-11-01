@@ -11,7 +11,7 @@
   const ogDescription =
     'Expert in .NET full-stack development, AI/ML integration, and cloud infrastructure. Available for consulting and training.';
   const twitterDescription = 'Expert in .NET, AI/ML, and cloud infrastructure solutions.';
-  const imageUrl = `${siteUrl}assets/profile.webp`;
+  const imageUrl = `${siteUrl}og-image.png`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -51,15 +51,21 @@
   <link rel="preload" as="image" href="/assets/profile.webp" fetchpriority="high" />
 
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Michał Kruczek" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={ogDescription} />
   <meta property="og:url" content={siteUrl} />
   <meta property="og:image" content={imageUrl} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Michał Kruczek – Full-Stack Developer & AI Specialist" />
 
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={twitterDescription} />
   <meta name="twitter:image" content={imageUrl} />
+  <meta name="twitter:image:alt" content="Michał Kruczek – Full-Stack Developer & AI Specialist" />
 
   <!-- eslint-disable-next-line svelte/no-at-html-tags -- content is JSON.stringify output with "<" escaped -->
   {@html jsonLdScript}
