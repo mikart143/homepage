@@ -56,7 +56,9 @@
           target={external ? '_blank' : '_self'}
           rel={external ? 'noopener noreferrer' : undefined}
           class="group rounded-xl border border-white/20 bg-white/5 p-6 backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:bg-white/10 focus:outline-2 focus:outline-offset-2 focus:outline-white"
-          aria-label={external ? `${title} (opens in new window)` : title}
+          aria-label={external
+            ? `${title}: ${description} (opens in new window)`
+            : `${title}: ${description}`}
         >
           <div
             class="mb-3 flex h-12 w-12 items-center justify-center rounded-lg border border-white/15 bg-white/5"
