@@ -1,0 +1,18 @@
+{
+  "specVersion": "0.91",
+  "entries": [
+    {
+      "identifier": "urn:air:kruczek.dev:portfolio:homepage",
+      "displayName": "Michał Kruczek Portfolio",
+      "type": "text/html",
+      "url": "https://kruczek.dev/",
+      "representativeQueries": [
+        "Michał Kruczek portfolio",
+        ".NET full-stack developer",
+        "AI specialist and consulting",
+        "Azure Kubernetes DevOps engineer",
+        "contact Michał Kruczek"
+      ]
+    }
+  ]
+}
