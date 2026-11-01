@@ -45,10 +45,6 @@
 <svelte:head>
   <title>{title}</title>
   <meta name="description" content={description} />
-  <meta
-    name="keywords"
-    content=".NET, C#, AI, Machine Learning, Azure, Kubernetes, Web Development, Full-Stack"
-  />
   <meta name="author" content="Michał Kruczek" />
   <meta name="theme-color" content="#0f172a" />
   <link rel="canonical" href={siteUrl} />
