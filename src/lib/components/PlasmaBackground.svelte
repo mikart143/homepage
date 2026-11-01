@@ -1,5 +1,5 @@
 <div
-  class="absolute top-0 left-0 z-0 h-full w-full overflow-hidden isolate transform-[translate3d(0,0,0)] blur-[150px]"
+  class="absolute top-0 left-0 isolate z-0 h-full w-full transform-[translate3d(0,0,0)] overflow-hidden blur-[150px]"
 >
   <div
     class="animate-gradient-1 absolute -z-2 rounded-full opacity-60 mix-blend-screen contain-paint"
