@@ -12,6 +12,8 @@
         src="/assets/profile.webp"
         alt="Michał Kruczek - Full-Stack Developer"
         class="h-64 w-64 rounded-full border-4 border-blue-400 object-cover shadow-xl"
+        width="256"
+        height="256"
         fetchpriority="high"
       />
     </div>

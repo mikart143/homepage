@@ -48,6 +48,7 @@
   <meta name="author" content="Michał Kruczek" />
   <meta name="theme-color" content="#0f172a" />
   <link rel="canonical" href={siteUrl} />
+  <link rel="preload" as="image" href="/assets/profile.webp" fetchpriority="high" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
